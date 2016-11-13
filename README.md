@@ -5,7 +5,7 @@ Agent Orange is a chrome extension for changing Donald j. Trump his name to any 
 
 ## How to install
 
-1. Go to your chrome extension page chrome://extentions
+1. Go to your chrome extension page chrome://extensions
 2. Click "Load unpacked extensions"
 3. select the folder you cloned this repo into
 4. giddy up!
