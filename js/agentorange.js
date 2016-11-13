@@ -24,6 +24,26 @@ if(chrome.storage.sync.get({
         });
 
       });
+	  
+	  
+      chrome.storage.sync.get({
+        kittens: false
+      }, function(item){
+      if(item.kittens == true){
+        $('img').each(function(i){
+
+          var alt = $(this).attr("alt"),
+              title = $(this).attr('title'),
+              src = $(this).attr('src');
+              imgRef = "https://placekitten.com/"+Math.round($(this).width())+"/"+Math.round($(this).height());
+		
+          if((title && title.match(trumpRegex))||(src && src.match(trumpRegex))||(alt && alt.match(trumpRegex)) && !$(this).data('kittenChanged')) {
+              $(this).attr("src",imgRef);
+			  $(this).data('kittenChanged', 'true');
+          }
+        });
+      }
+      });
 
     };
 
