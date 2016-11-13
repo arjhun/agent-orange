@@ -58,9 +58,14 @@ if(chrome.storage.sync.get({
 
           var alt = $(this).attr("alt"),
               title = $(this).attr('title'),
+              src = $(this).attr('src');
               imgRef = "https://placekitten.com/"+Math.round($(this).width())+"/"+Math.round($(this).height());
 
           if(title && title.match(trumpRegex)){
+              $(this).attr("src",imgRef);
+          }
+          
+           if (src && src.match(trumpRegex)) {
               $(this).attr("src",imgRef);
           }
 
