@@ -42,41 +42,11 @@ if(chrome.storage.sync.get({
     // and what types of mutations trigger the callback
     observer.observe(document, {
       subtree: true,
-      attributes: true
+      childList: true
       //...
     });
 
     replace();
-
-    $(document).ready(function(){
-
-      chrome.storage.sync.get({
-        kittens: false
-      }, function(item){
-      if(item.kittens == true){
-        $('img').each(function(i){
-
-          var alt = $(this).attr("alt"),
-              title = $(this).attr('title'),
-              src = $(this).attr('src');
-              imgRef = "https://placekitten.com/"+Math.round($(this).width())+"/"+Math.round($(this).height());
-
-          if(title && title.match(trumpRegex)){
-              $(this).attr("src",imgRef);
-          }
-          
-           if (src && src.match(trumpRegex)) {
-              $(this).attr("src",imgRef);
-          }
-
-          if (alt && alt.match(trumpRegex)) {
-              $(this).attr("src",imgRef);
-          }
-        });
-      }
-      });
-
-    });
 
   }
 
