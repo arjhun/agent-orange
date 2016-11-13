@@ -19,8 +19,8 @@ if(chrome.storage.sync.get({
           find: trumpRegex,
           replace: function(a,c){
             return items.theWord;
-          }
-
+          },
+	preset:'prose'
         });
 
       });
