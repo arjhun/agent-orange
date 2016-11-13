@@ -1,0 +1,57 @@
+<html>
+<head>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css" >
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css" >
+  <link rel="stylesheet" href="/css/agentorange.css" >
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="/js/jquery-3.1.1.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/options.js"></script>
+</head>
+<body>
+<div id="saved" class="pull-right"><span class="label label-success ">saved</span></div>
+<p id="paused" class="bg-warning collapse">
+  The extension is paused!
+</p>
+<form id="optionform" class="form-horizontal">
+
+<fieldset>
+<!-- Form Name -->
+<legend>Options</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="name">Change his name into:</label>
+  <div class="col-md-4">
+  <input id="theword" name="name" type="text" placeholder="" class="form-control input-md">
+  </div>
+</div>
+<div>
+
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="kittens"></label>
+    <div class="col-md-4">
+      <label class="checkbox-inline" for="kittens-0">
+        <input type="checkbox" name="kittens" id="kittens-0" value="">
+        Try to replace his face with sweet kittens :D
+      </label>
+    </div>
+  </div>
+
+<!-- Button -->
+<div class="form-group">
+  <div class="col-md-4">
+    <button id="applybtn" name="applybtn" class="btn btn-primary">Apply</button>
+  </div>
+  <div class="col-md-4">
+    <button id="playPause" class="btn btn-default btn-sm pull-right"><span id="playPauseIcon" class="glyphicon  glyphicon-play"></span><span id="playPauseText">Resume</span> Extension</button>
+  </div>
+</div>
+</fieldset>
+</form>
+
+</body>
+</html>

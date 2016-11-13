@@ -1,0 +1,11 @@
+body{
+  width:350px;
+  padding: 20px;
+}
+
+#saved{
+  display: none;
+  right: 20px;
+  top: 20px;
+  position: absolute;
+}

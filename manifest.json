@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+
+  "name": "Agent Orange",
+  "description": "This extension is designed for all the people who are sick of the sour taste in their mouth hearing the name Donald J. Trump. Also there is the option to replace his face with cute kittens. Because. 100% coverage not guaranteed. We have 4 years to make it work!",
+  "version": "0.1",
+
+  "default_locale": "en",
+
+  "browser_action": {
+    "default_icon": { "19":"icon-19.png",
+                      "48":"icon-48.png",
+                      "128": "icon-128.png"},
+    "default_popup": "option_popup.html",
+    "default_title" : "Read the news without vommiting in your mouth"
+  },
+  "icons": { "19":"icon-19.png",
+                    "48":"icon-48.png",
+                    "128": "icon-128.png"},
+  "content_scripts": [{
+      "matches": ["http://*/*","https://*/*"],
+      "js": [ "js/jquery-3.1.1.min.js","js/findAndReplaceDOMText.js", "js/agentorange.js"],
+      "run_at":"document_end",
+      "all_frames" : true
+  }],
+  "permissions": [
+         "storage"
+       ]
+}
