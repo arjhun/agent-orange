@@ -16,3 +16,10 @@ Here you can do the following:
 - Change the word your replacing his name with.
 - Select if the extension will try to replace photo's
 - Pause or Resume the extension
+
+## Software used
+Software this greatly benefits from:
+
+- jquery version 3.1.1 https://jquery.com/
+- bootstrap 3.3.7 http://getbootstrap.com/
+- FindAndReplaceDOMText by James Padolsey https://github.com/padolsey/findAndReplaceDOMText
