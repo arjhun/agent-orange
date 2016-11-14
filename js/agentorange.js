@@ -24,14 +24,19 @@ if(chrome.storage.sync.get({
         });
 
       });
-	  
-	  
+
+      findAndReplaceDOMText(document.body, {
+        find: /make america great again/gi,
+        replace: "Make America fluffy again!",
+        preset:'prose'
+      });
+
       chrome.storage.sync.get({
         kittens: false
       }, function(item){
       if(item.kittens == true){
       	$('img,div').each(function(i){
-		
+
           var alt = $(this).attr("alt"),
               title = $(this).attr('title'),
               src = $(this).attr('src'),
