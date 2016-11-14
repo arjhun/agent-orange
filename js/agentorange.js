@@ -32,7 +32,7 @@ if(chrome.storage.sync.get({
       });
 
       chrome.storage.sync.get({
-        kittens: false
+        kittens: true
       }, function(item){
       if(item.kittens == true){
       	$('img,div').each(function(i){
