@@ -17,10 +17,10 @@ if(chrome.storage.sync.get({
 
         finder = findAndReplaceDOMText(document.body, {
           find: trumpRegex,
-          replace: function(a,c){
+          replace: function(a,b){
             return items.theWord;
           },
-	preset:'prose'
+	        preset:'prose'
         });
 
       });
