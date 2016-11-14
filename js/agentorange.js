@@ -35,7 +35,9 @@ if(chrome.storage.sync.get({
       });
 
       chrome.storage.sync.get({
-        kittens: true
+        kittens: true,
+        isCustom: false,
+        customImage: 'https://placekitten.com/$width/$height'
       }, function(item){
       if(item.kittens == true){
       	$('img,div').each(function(i){
@@ -46,13 +48,27 @@ if(chrome.storage.sync.get({
               bg = $(this).css('background-image');
 
           if((title && title.match(trumpRegex))||(src && src.match(trumpRegex))||(alt && alt.match(trumpRegex)) || (bg &&  bg.match(trumpRegex)) && !$(this).data('kittenChanged')) {
-              var imgRef = "https://placekitten.com/"+Math.round($(this).width())+"/"+Math.round($(this).height());
-             
-                  $(this).css('background-image', 'url(' + imgRef + ')');
-             
-                $(this).attr("src",imgRef);
-              
-              $(this).data('kittenChanged', 'true');
+            var imgRef = "https://placekitten.com/$width/$height";
+
+              if(item.isCustom) {
+                if(item.customImage){
+                  imgRef = item.customImage;
+                }
+
+              }
+            var width = $(this).width(),
+                height = $(this).height();
+
+              if(width > 0 && height > 0){
+                 imgRef = imgRef.replace('$width',Math.round(width));
+                  imgRef = imgRef.replace('$height', Math.round(height));
+
+                      $(this).css('background-image', 'url(' + imgRef + ')');
+
+                    $(this).attr("src",imgRef);
+
+                  $(this).data('kittenChanged', 'true');
+            }
           }
         });
       }

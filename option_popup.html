@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
   <!-- Latest compiled and minified CSS -->
@@ -31,15 +32,38 @@
 </div>
 <div>
 
+  <!-- Text input-->
   <div class="form-group">
-    <label class="col-md-4 control-label" for="kittens"></label>
+    <label class="col-md-4 control-label" for="slogan">Change his slogan into:</label>
+    <div class="col-md-4">
+    <input id="theSlogan" name="slogan" type="text" placeholder="" class="form-control input-md">
+    </div>
+  </div>
+  <div>
+
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="kittens">Photo replacer</label>
     <div class="col-md-4">
       <label class="checkbox-inline" for="kittens-0">
         <input type="checkbox" name="kittens" id="kittens-0" value="">
-        Try to replace his face with sweet kittens :D
+        Try to replace his face (defaults to sweet kittens!).
       </label>
     </div>
   </div>
+
+  <!-- Prepended checkbox -->
+<div id="customGroup" class="form-group collapse">
+    <label class="col-md-4 control-label" for="customImage">Custom image</label>
+  <div class="col-md-4">
+    <div class="input-group">
+      <span class="input-group-addon">
+          <input id="isCustom" type="checkbox">
+      </span>
+      <input id="customImage" name="customImage" class="form-control" type="text" placeholder="http://placekitten.com/$width/$height" disabled="disabled">
+    </div>
+    <p class="help-block">$width &amp; $height will be replaced with original image size</p>
+  </div>
+</div>
 
 <!-- Button -->
 <div class="form-group">
