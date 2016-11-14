@@ -1,4 +1,5 @@
-var defaultName = "Agent Orange";
+var defaultName = "Agent Orange",
+    defaultSlogan = "Make America fluffy again";
 
 if(chrome.storage.sync.get({
   paused: false
@@ -7,12 +8,14 @@ if(chrome.storage.sync.get({
   if(!res.paused){
 
     var finder,
-        trumpRegex = /realdonaldtrump|donald j. trump|donald john trump|donaldjtrump|Donald J. Trump|Donald J Trump|donald\strump|donaldjtrump|donaldtrump|\btrump(?='s)|DonaldTrump|\b(trump|donald)(\b|(?='s))/gi;
+        trumpRegex = /realdonaldtrump|donald j. trump|donald john trump|donaldjtrump|Donald J. Trump|Donald J Trump|donald\strump|donaldjtrump|donaldtrump|\btrump(?='s)|DonaldTrump|\b(trump|donald)(\b|(?='s))/gi,
+        sloganRegex = /make america great again/gi;
 
     function replace(){
 
       chrome.storage.sync.get({
-        theWord: defaultName
+        theWord: defaultName,
+        theSlogan: defaultSlogan
       }, function(items) {
 
         finder = findAndReplaceDOMText(document.body, {
@@ -23,12 +26,12 @@ if(chrome.storage.sync.get({
 	        preset:'prose'
         });
 
-      });
+        findAndReplaceDOMText(document.body, {
+          find: sloganRegex,
+          replace: items.theSlogan,
+          preset:'prose'
+        });
 
-      findAndReplaceDOMText(document.body, {
-        find: /make america great again/gi,
-        replace: "Make America fluffy again!",
-        preset:'prose'
       });
 
       chrome.storage.sync.get({
