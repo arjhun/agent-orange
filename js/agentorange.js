@@ -7,7 +7,7 @@ if(chrome.storage.sync.get({
   if(!res.paused){
 
     var finder,
-        trumpRegex = /trumpdonald|realdonaldtrump|donaldjohntrump|donaldtrump|donald john trump|donald trump|donald j. trump|donald j trump|donaldjtrump|donaldjohntrump|donald john trump|donaldjtrump|donaldtrump|Donald Donald J. Trump|Donald Trump|\b(trump|donald)\b/gi;
+        trumpRegex = /realdonaldtrump|donald j. trump|donald john trump|donaldjtrump|Donald J. Trump|Donald J Trump|donald\strump|donaldjtrump|donaldtrump|\btrump(?='s)|DonaldTrump|\b(trump|donald)(\b|(?='s))/gi;
 
     function replace(){
 
