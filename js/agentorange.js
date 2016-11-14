@@ -44,11 +44,11 @@ if(chrome.storage.sync.get({
 
           if((title && title.match(trumpRegex))||(src && src.match(trumpRegex))||(alt && alt.match(trumpRegex)) || (bg &&  bg.match(trumpRegex)) && !$(this).data('kittenChanged')) {
               var imgRef = "https://placekitten.com/"+Math.round($(this).width())+"/"+Math.round($(this).height());
-              if(bg){
+             
                   $(this).css('background-image', 'url(' + imgRef + ')');
-              }else{
+             
                 $(this).attr("src",imgRef);
-              }
+              
               $(this).data('kittenChanged', 'true');
           }
         });
