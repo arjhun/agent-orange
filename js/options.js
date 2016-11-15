@@ -4,7 +4,7 @@ $(document).ready(function(){
     chrome.storage.sync.set({
       theWord: $("#theword").val(),
       theSlogan: $("#theSlogan").val(),
-      kittens: $('#kittens-0').prop('checked'),
+      kittens: $('#kittens').prop('checked'),
       isCustom: $('#isCustom').prop('checked'),
       customImage:  $("#customImage").val()
     }, function() {
@@ -25,7 +25,7 @@ $(document).ready(function(){
 
   });
 
-  $("#kittens-0").click(function(){
+  $("#kittens").click(function(){
     if($(this).prop('checked')){
       $('#customGroup').show();
     }else{
@@ -40,7 +40,7 @@ $(document).ready(function(){
   chrome.storage.sync.get(function(items) {
     $('#theword').val(items.theWord);
     $('#theSlogan').val(items.theSlogan);
-    $('#kittens-0').prop('checked', items.kittens);
+    $('#kittens').prop('checked', items.kittens);
     $('#isCustom').prop('checked', items.isCustom);
     $('#customImage').val(items.customImage);
 
