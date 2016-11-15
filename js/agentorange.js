@@ -20,9 +20,7 @@ if(chrome.storage.sync.get({
 
         finder = findAndReplaceDOMText(document.body, {
           find: trumpRegex,
-          replace: function(a,b){
-            return items.theWord;
-          },
+          replace: items.theWord,
 	        preset:'prose'
         });
 
