@@ -3,7 +3,7 @@
 
   "name": "Trumper Dumper",
   "description": "Will change Trump's name to any word you please. It also changes photos of him into pictures of kittens or something else",
-  "version": "0.3.1",
+  "version": "0.3.2",
 
   "browser_action": {
     "default_icon": { "19":"icon-19.png",
