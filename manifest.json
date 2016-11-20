@@ -11,7 +11,7 @@
                       "128": "icon-128.png"},
     "default_popup": "option_popup.html",
     "default_title" : "Read the news without vommiting in your mouth"
-  },
+  },"background": { "scripts": ["js/background.js"] },
   "icons": { "19":"icon-19.png",
                     "48":"icon-48.png",
                     "128": "icon-128.png"},

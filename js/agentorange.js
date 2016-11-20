@@ -87,7 +87,6 @@ if(chrome.storage.sync.get({
     });
 
     replace();
-
   }
-
+  chrome.runtime.sendMessage({"paused": res.paused});
 }));
