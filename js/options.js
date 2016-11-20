@@ -1,5 +1,9 @@
 $(document).ready(function(){
 
+  $('#donate').click(function(){
+      chrome.tabs.create({url: 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JRY7QUL8X4WQS'});
+  });
+
   $( "#applybtn" ).click(function() {
     chrome.storage.sync.set({
       theWord: $("#theword").val(),
