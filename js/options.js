@@ -37,7 +37,11 @@ $(document).ready(function(){
     $('#customImage').prop('disabled', function(i, v) { return !v; });
   });
 
-  chrome.storage.sync.get(function(items) {
+  chrome.storage.sync.get({
+    theWord: defaultName,
+    theSlogan: defaultSlogan,
+    kittens: true
+  },function(items) {
     $('#theword').val(items.theWord);
     $('#theSlogan').val(items.theSlogan);
     $('#kittens').prop('checked', items.kittens);
