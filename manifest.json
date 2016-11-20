@@ -17,7 +17,7 @@
                     "128": "icon-128.png"},
   "content_scripts": [{
       "matches": ["http://*/*","https://*/*"],
-      "js": [ "js/jquery-3.1.1.min.js","js/findAndReplaceDOMText.js","js/defaults.js" "js/agentorange.js"],
+      "js": [ "js/jquery-3.1.1.min.js","js/findAndReplaceDOMText.js","js/defaults.js", "js/agentorange.js"],
       "run_at":"document_end",
       "all_frames" : true
   }],
