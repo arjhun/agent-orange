@@ -44,7 +44,8 @@ $(document).ready(function(){
   chrome.storage.sync.get({
     theWord: defaultName,
     theSlogan: defaultSlogan,
-    kittens: true
+    kittens: true,
+    paused: false
   },function(items) {
     $('#theword').val(items.theWord);
     $('#theSlogan').val(items.theSlogan);
