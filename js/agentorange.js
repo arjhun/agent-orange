@@ -1,6 +1,3 @@
-var defaultName = "Agent Orange",
-    defaultSlogan = "Make America fluffy again";
-
 if(chrome.storage.sync.get({
   paused: false
 },function(res){
