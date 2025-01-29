@@ -2,12 +2,24 @@
 
 Agent Orange is a chrome extension for changing Donald j. Trump his name to any word you please. It can also optionally try to change photo's of him into pictures of kittens. Because browsing online news outlets will be something you can handle.
 
-## How to install
+## How to build and install
 
-1. Go to your chrome extension page chrome://extensions
-2. Click "Load unpacked extensions"
-3. select the folder you cloned this repo into
-4. giddy up!
+1. Clone or download this repo
+2. `npm install` 
+3. `npm run build`
+4. Go to your chrome extension page [chrome://extensions](chrome://extensions)
+5. Click "Load unpacked extensions"
+6. navigate to the 'dist' folder
+7. giddy up!
+
+optional:
+
+for analytics through google's measurements api add a `.env` or `.env.local` to the root directory with the following key value pairs:
+
+```javascript
+VITE_MEASUREMENT_ID="G-your_m_key"
+VITE_API_SECRET="your_api_key"
+```
 
 ## How to update
 
@@ -26,7 +38,7 @@ Here you can do the following:
 ## Software used
 Software this greatly benefits from:
 
-- jquery version 3.1.1 https://jquery.com/
-- bootstrap 3.3.7 http://getbootstrap.com/
-- FindAndReplaceDOMText by James Padolsey https://github.com/padolsey/findAndReplaceDOMText
-- kittens https://placekitten.com/
+- Cash by Fabio Spampinato - https://github.com/fabiospampinato/cash
+- Bootstrap - http://getbootstrap.com/
+- FindAndReplaceDOMText by James Padolsey - https://github.com/padolsey/findAndReplaceDOMText
+- Placecats placeholders https://placecats.com/
