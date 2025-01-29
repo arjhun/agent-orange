@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Trumper Dumper",
+  "description": "Will change Trump's name to any word you please. It also changes photos of him into pictures of kittens or something else",
+  "version": "0.5.1",
+  "homepage_url": "https://code.arjenklaverstijn.com",
+  "icons": {
+    "19": "icons/icon-19.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "background": {
+    "service_worker": "js/background.js",
+    "type": "module"
+  },
+  "options_page": "option_popup.html",
+  "action": {
+    "default_locale": "en",
+    "default_icon": "icons/icon-19.png",
+    "default_popup": "option_popup.html",
+    "default_title": "Read the news without vommiting in your mouth"
+  },
+  "web_accessible_resources": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "resources": ["assets/cash.esm.js","js/content.js"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["js/content_loader.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "permissions": ["storage"]
+}

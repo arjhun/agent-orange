@@ -1,86 +1,92 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="/css/bootstrap.min.css" >
-
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="/css/bootstrap-theme.min.css" >
-  <link rel="stylesheet" href="/css/agentorange.css" >
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/agentorange.css">
   <!-- Latest compiled and minified JavaScript -->
-  <script src="/js/jquery-3.1.1.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/defaults.js"></script>
-  <script src="/js/options.js"></script>
+  <script src="src/popup/js/option_popup.js" type="module"></script>
 </head>
+
 <body>
-<div class="container">
-<div id="saved" class="pull-right"><span class="label label-success ">saved</span></div>
-<p id="paused" class="bg-warning collapse">
-  The extension is paused!
-</p>
-<form id="optionform" class="form-horizontal">
-
-<fieldset>
-<!-- Form Name -->
-<legend>Options</legend>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="name">Change his name into:</label>
-  <div class="col-md-4">
-  <input id="theword" name="name" type="text" placeholder="" class="form-control input-md">
-  </div>
-</div>
-<div>
-
-  <!-- Text input-->
-  <div class="form-group">
-    <label class="col-md-4 control-label" for="slogan">Change his slogan into:</label>
-    <div class="col-md-4">
-    <input id="theSlogan" name="slogan" type="text" placeholder="" class="form-control input-md">
+  <div id="container" class="container">
+    <div id="saved" class="pull-right"><span class="badge badge-success">saved</span></div>
+    <div id="donate-alert" class="alert alert-info alert-dismissible " hidden role="alert">
+      <button type="button" class="donateDismiss close" data-dismiss="alert" aria-label="Close"><span
+          aria-hidden="true">&times;</span></button>
+      <p>
+        If this made you feel better, please consider a donation! Or <a class="coffeeButton" onclick="buyCoffee();"
+          href="#">Buy
+          me a
+          coffee&trade;</a>
+      </p>
+      <p>
+        <button class="donateButton btn btn-xs btn-info">Donate</button>
+        <button class="donateDismiss btn btn-xs btn-warning">Dismiss</button>
+      </p>
     </div>
-  </div>
-  <div>
+    <p id="paused" class="bg-danger collapse">
+      The extension is paused!
+    </p>
+    <form id="optionform" class="form-horizontal">
 
-  <div class="form-group">
-    <label class="col-md-4 control-label" for="kittens">Photo replacer</label>
-    <div class="col-md-4">
-      <label class="checkbox-inline" for="kittens">
-        <input type="checkbox" name="kittens" id="kittens" value="">
-        Try to replace his face (defaults to sweet kittens!).
-      </label>
-    </div>
-  </div>
+      <fieldset>
+        <!-- Form Name -->
+        <legend title=""><a href="#" title="resume/pause filtering" id="playPause"><span id="playPauseIcon"
+              class="glyphicon  glyphicon-play"></span></a> Trumper Dumper Options</legend>
 
-  <!-- Prepended checkbox -->
-<div id="customGroup" class="form-group collapse">
-    <label class="col-md-4 control-label" for="customImage">Custom image</label>
-  <div class="col-md-4">
-    <div class="input-group">
-      <span class="input-group-addon">
-          <input id="isCustom" type="checkbox">
-      </span>
-      <input id="customImage" name="customImage" class="form-control" type="text" placeholder="http://placekitten.com/$width/$height" disabled="disabled">
-    </div>
-    <p class="help-block">$width &amp; $height will be replaced with original image size</p>
-  </div>
-</div>
-
-<!-- Button -->
-<div class="form-group">
-  <div class="col-md-4">
-    <button id="applybtn" name="applybtn" class="btn btn-primary">Apply</button>
-  </div>
-  <div class="col-md-4">
-    <button id="playPause" class="btn btn-default btn-sm pull-right"><span id="playPauseIcon" class="glyphicon  glyphicon-play"></span><span id="playPauseText">Resume</span> Extension</button>
-  </div>
-</div>
-</fieldset>
-</form>
-<p class="bg-info">
-  If this made you feel better, please consider a <a id="donate" href="#">donation</a>!
-</p>
-</div>
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="name">Change his name into:</label>
+          <div class="col-md-4">
+            <input id="theword" name="name" type="text" placeholder="" class="form-control input-md">
+          </div>
+        </div>
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="slogan">Change his slogan into:</label>
+          <div class="col-md-4">
+            <input id="theSlogan" name="slogan" type="text" placeholder="" class="form-control input-md">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-4">
+            <button disabled="disabled" id="applybtn" name="applybtn" class="btn btn-primary pull-right">Apply</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="kittens">Photo replacer</label>
+          <div class="col-md-4">
+            <label class="checkbox-inline" for="kittens">
+              <input type="checkbox" name="kittens" id="kittens" value="">
+              Try to replace his face (defaults to sweet kittens!).
+            </label>
+          </div>
+        </div>
+        <!-- Prepended checkbox -->
+        <div id="customGroup" class="form-group collapse">
+          <label class="col-md-4 control-label" for="customImage">Custom image</label>
+          <div class="col-md-4">
+            <p class="help-block"><small><code>$width</code> &amp; <code>$height</code> will be replaced with original
+                image
+                size</small></p>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <input type="checkbox" aria-label="Checkbox for following text input" id="isCustom">
+                </div>
+              </div>
+              <input placeholder="https://placecats.com/$width/$height" disabled="disabled" id="customImage" name="customImage"
+                type="text" class="form-control" aria-label="Text input with checkbox">
+              </div>
+          </div>
+          </div>
+          </fieldset>
+          </form>
+    <div class="text-center"><small class="help-block"><a class="coffeeButton">Buy me a coffee&trade;</a> or donate <a
+          class="donateButton">here</a>!
+      </small></div>
 </body>
+
 </html>

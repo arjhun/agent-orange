@@ -1,0 +1,21 @@
+{
+  "name": "trumper-dumper",
+  "private": true,
+  "version": "0.5.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build-zip": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "cash-dom": "^8.1.5",
+    "chrome-types": "^0.1.333",
+    "vite": "^6.0.5",
+    "vite-plugin-zip-pack": "^1.2.4"
+  },
+  "dependencies": {
+    "findandreplacedomtext": "^0.4.6"
+  }
+}
