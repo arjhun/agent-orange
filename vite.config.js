@@ -1,11 +1,20 @@
 import { defineConfig } from "vite";
-import { resolve } from "node:path";
+import { join, resolve } from "node:path";
 import zipPack from "vite-plugin-zip-pack";
+import transformPlugin from "vite-plugin-transform";
 
 const version = process.env.npm_package_version;
 
 export default defineConfig({
-  plugins: [zipPack({ outFileName: `trumper-dumper_${version}.zip` })],
+  plugins: [
+    transformPlugin({
+      tStart: "%{",
+      tEnd: "}%",
+      replaceFiles: [resolve(join(__dirname, "/dist/manifest.json"))],
+      replace: { version: version },
+    }),
+    zipPack({ outFileName: `trumper-dumper_${version}.zip` }),
+  ],
   define: {
     __APP_VERSION__: JSON.stringify(version),
   },
