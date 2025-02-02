@@ -1,1 +1,0 @@
-const e={theWord:"Oompa Loompa",theSlogan:"Doompadee doo!",shouldReplace:!0,paused:!1,isCustom:!1,placeholder:"https://placecats.com/$width/$height",customPlaceholderUrl:"https://placecats.com/$width/$height",donate:!0,donateLastChanged:null};export{e as d};
