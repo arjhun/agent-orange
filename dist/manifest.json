@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Trumper Dumper",
   "description": "Will change Trump's name to any word you please. It also changes photos of him into pictures of kittens or something else",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "homepage_url": "https://code.arjenklaverstijn.com",
   "icons": {
     "19": "icons/icon-19.png",

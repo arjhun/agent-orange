@@ -51,19 +51,19 @@ function render() {
     $customImage.prop("disabled", false);
   }
 
+  
   if (!options.paused) {
     $("#container").removeClass("isPaused");
-    $playPauseIcon.addClass("glyphicon-pause");
-    $playPauseIcon.removeClass("glyphicon-play");
+    $playPauseIcon.attr("src", "icons/pause-fill.svg");
     $playPauseText.text("Pause Extention");
     $paused.hide();
   } else {
     $("#container").addClass("isPaused");
-    $playPauseIcon.addClass("glyphicon-play");
-    $playPauseIcon.removeClass("glyphicon-pause");
+    $playPauseIcon.attr("src", "icons/play-fill.svg");
     $playPauseText.text("Resume Extention");
     $paused.show();
   }
+
   ogForm = $("form").serialize();
   const sinceLastDonate = Date.now() - options.donateLastChanged;
   console.log(sinceLastDonate);

@@ -3,6 +3,14 @@ body{
   padding: 20px;
 }
 
+legend{
+  display: flex;
+}
+
+#playPause{
+  margin-left: auto;
+}
+
 #saved{
   display: none;
   right: 20px;
